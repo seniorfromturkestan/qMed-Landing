@@ -1,0 +1,7 @@
+https://qmed.kz/* https://qmedai.kz/:splat 301!
+http://qmed.kz/* https://qmedai.kz/:splat 301!
+https://qbots.kz/* https://qmedai.kz/:splat 301!
+http://qbots.kz/* https://qmedai.kz/:splat 301!
+
+/api/* /.netlify/functions/:splat 200
+/* /index.html 200
