@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Скачать qMed AI</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="description" content="Скачать мобильное приложение qMed AI в App Store, Google Play или Huawei AppGallery." />
+  <script>
+    (function () {
+      var LINKS = {
+        ios: 'https://apps.apple.com/kz/app/qmed-ai/id6760441163',
+        android: 'https://play.google.com/store/apps/details?id=com.qmed.patient',
+        huawei: 'https://appgallery.huawei.com/app/C117401695'
+      };
+
+      var ua = navigator.userAgent || navigator.vendor || window.opera || '';
+
+      // 1. iOS / iPadOS detection
+      var isIOS = /iPad|iPhone|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (isIOS) {
+        window.location.replace(LINKS.ios);
+        return;
+      }
+
+      // 2. Huawei / HarmonyOS detection
+      var isHuawei = /HUAWEI|HONOR|HarmonyOS|HMSCore|ArkWeb/i.test(ua);
+      if (isHuawei) {
+        window.location.replace(LINKS.huawei);
+        return;
+      }
+
+      // 3. Android detection
+      var isAndroid = /Android/i.test(ua);
+      if (isAndroid) {
+        window.location.replace(LINKS.android);
+        return;
+      }
+    })();
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f7f8fc;
+      color: #111827;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #ffffff;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 24px;
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(27, 89, 248, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+    .logo {
+      height: 52px;
+      width: auto;
+      margin-bottom: 18px;
+      object-fit: contain;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #000;
+    }
+    p {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 1.5;
+      margin-bottom: 26px;
+    }
+    .stores {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .store-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      color: #ffffff;
+      background: #1b59f8;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .store-btn:hover {
+      background: #1447cc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(27, 89, 248, 0.25);
+    }
+    .store-btn.secondary {
+      background: #111827;
+    }
+    .store-btn.secondary:hover {
+      background: #1f2937;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: #1b59f8;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="/logo-qMed.png" alt="qMed AI" class="logo" />
+    <h1>Скачать qMed AI</h1>
+    <p>Выберите магазин приложений для вашего устройства:</p>
+
+    <div class="stores">
+      <a href="https://apps.apple.com/kz/app/qmed-ai/id6760441163" class="store-btn">
+        App Store (iPhone / iPad)
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.qmed.patient" class="store-btn">
+        Google Play (Android)
+      </a>
+      <a href="https://appgallery.huawei.com/app/C117401695" class="store-btn secondary">
+        AppGallery (Huawei)
+      </a>
+    </div>
+
+    <a href="/" class="back-link">← Вернуться на сайт qmedai.kz</a>
+  </div>
+</body>
+</html>
+

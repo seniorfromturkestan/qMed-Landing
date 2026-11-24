@@ -1,4 +1,4 @@
-export type Language = 'RU' | 'KZ'
+export type Language = 'RU' | 'KZ' | 'EN'
 
 export interface TranslationSchema {
   header: {
@@ -77,6 +77,9 @@ export interface TranslationSchema {
     contacts: string
     address: string
     rights: string
+    documents: string
+    privacyPolicy: string
+    publicOffer: string
   }
   modal: {
     title: string
@@ -210,6 +213,9 @@ export const translations: Record<Language, TranslationSchema> = {
       contacts: 'Контакты',
       address: 'Алматы, Кабдолова 22Б',
       rights: '© qMed AI 2026 · ТОО «qBots»',
+      documents: 'Документы',
+      privacyPolicy: 'Политика конфиденциальности',
+      publicOffer: 'Публичная оферта',
     },
     modal: {
       title: 'Связаться с нами',
@@ -341,6 +347,9 @@ export const translations: Record<Language, TranslationSchema> = {
       contacts: 'Байланыстар',
       address: 'Алматы, Қабдолов 22Б',
       rights: '© qMed AI 2026 · «qBots» ЖШС',
+      documents: 'Құжаттар',
+      privacyPolicy: 'Құпиялық саясаты',
+      publicOffer: 'Жария оферта',
     },
     modal: {
       title: 'Бізбен байланысу',
@@ -362,6 +371,140 @@ export const translations: Record<Language, TranslationSchema> = {
       contextLabel: 'Сұраным',
       closeBtn: 'Түсінікті, жабу',
       error: 'Өтінімді жіберу мүмкін болмады. Қайталап көріңіз.',
+    },
+  },
+  EN: {
+    header: {
+      subtitle: 'Digital chronic care platform',
+      nav: {
+        platform: 'Platform',
+        features: 'Features',
+        scenarios: 'Scenarios',
+        faq: 'FAQ',
+      },
+      requestDemo: 'Request a demo',
+    },
+    hero: {
+      words: ['AI', 'DMP', 'Health', 'Monitoring', 'Analytics', 'PHC', 'Support', 'Control'],
+      subtitle: 'Digital platform for patients and healthcare organizations',
+      description: 'qMed AI helps patients stay monitored every day, while enabling healthcare organizations to detect risks early and respond in time.',
+      downloadApp: 'Download app',
+      requestDemo: 'Request a demo',
+      patientsCount: 'patients already with us',
+      grants: {
+        presidential: 'Presidential Grant',
+        healthMinistry: 'Ministry of Healthcare of the RK',
+        cardioAssoc: 'Association of Cardiologists of the RK',
+        asfendiyarov: 'Asfendiyarov KazNMU',
+      },
+    },
+    marquee: 'Daily patient self-monitoring • Risk signals & attention queue • Healthy lifestyle hubs: smoking, alcohol, nutrition, activity • Analytics for the medical team • ',
+    mission: {
+      solutionTitle: 'Solution',
+      solutionText: 'The platform gives patients access to self-monitoring for chronic non-communicable diseases (CHF, HTN, DM) and streamlines interaction with medical staff.',
+      goalTitle: 'Our Goal',
+      goalText: 'To implement a system that empowers patients to effectively self-manage their condition, preventing disease progression and reducing hospitalizations and mortality.',
+    },
+    promo: {
+      title: 'Promo video about the qMed AI platform',
+      watchButton: 'Watch promo video',
+    },
+    stats: {
+      title: 'Program Impact',
+      description: 'qMed AI makes chronic care faster, more transparent, and manageable: data → risk → attention queue → action → result.',
+      item1: 'of daily responses are automatically sorted by risk zones',
+      item2: 'faster identification of patients for priority contact',
+      item3: 'less manual routine for coordinators and medical staff',
+      item4: 'monitoring of patient statuses and program dynamics',
+    },
+    founder: {
+      name: 'Nurlan Biimbet',
+      title: 'Founder & CEO, qMed AI',
+      quote: '“We are building a digital telemedicine ecosystem that helps clinics optimize processes, empowers doctors to unlock their potential, and enables patients to receive timely, high-quality care.”',
+    },
+    products: {
+      doctorTitle: 'Platform for ',
+      doctorSpan: 'doctors',
+      doctorText: 'A unified digital care environment: a structured view of patient health between visits, risk signals, an attention queue, and analytics across coverage, districts, and doctors — instead of scattered spreadsheets, chats, and calls.',
+      doctorBtn: 'Discuss implementation',
+      patientTitle: 'App for ',
+      patientSpan: 'patients',
+      patientText: 'A clear daily routine: short check-ins, vital sign self-monitoring, reminders, and healthy lifestyle hubs — smoking, alcohol, nutrition, physical activity, and mental wellbeing. Patients are never left alone between visits.',
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      items: [
+        {
+          id: 1,
+          title: 'Who is qMed AI designed for?',
+          content: 'For patients with chronic conditions (HTN, CHF, DM), polyclinic doctors, primary healthcare centers (PHC), private clinics, disease management programs (DMP), corporate wellness programs, and regional outpatient monitoring projects.',
+        },
+        {
+          id: 2,
+          title: 'What does the patient get?',
+          content: 'A clear daily pathway: check-ins, reminders, self-monitoring of health metrics, and support between visits. Plus healthy lifestyle hubs covering smoking, alcohol, nutrition, physical activity, and emotional health.',
+        },
+        {
+          id: 3,
+          title: 'What do doctors and clinics get?',
+          content: 'A structured overview of patient status between visits, clear risk statuses (stable / needs attention / priority), an attention queue, and analytics across patients, districts, and doctors instead of fragmented spreadsheets and calls.',
+        },
+        {
+          id: 4,
+          title: 'Does qMed AI replace a doctor?',
+          content: 'No. The platform does not diagnose conditions in place of a specialist. It helps patients submit data regularly and enables doctors to spot critical changes earlier and make informed decisions based on a fuller clinical picture.',
+        },
+        {
+          id: 5,
+          title: 'How quickly can a pilot be launched?',
+          content: 'A pilot can start with a compact scenario: a single patient group, condition, check-in frequency, team roles, and doctor response workflow. Complex integration is not required to start — the scope expands as the project grows.',
+        },
+      ],
+    },
+    news: {
+      title: 'Media about ',
+      subtitle: 'Publications, interviews, and news about the platform’s development',
+      items: [
+        { id: 1, title: 'Astana Smart City Results: Top 10 Startups Improving Capital Life' },
+        { id: 2, title: '“Tauelsizdik Urpaqtary” Project Implemented in Clinics Nationwide' },
+        { id: 4, title: 'Medical Technologies for Commercialization Presented in Almaty' },
+        { id: 5, title: 'Kazakhstani Startups Win the Grand Final of Digital Startup Awards' },
+      ],
+    },
+    contactBanner: {
+      title: 'Discover how qMed AI can help you or your organization',
+    },
+    footer: {
+      subtitle: 'Digital chronic care platform',
+      description: 'Digital platform for chronic care monitoring, patient self-management, risk prioritization, and coordinated medical team workflows.',
+      sections: 'Sections',
+      contacts: 'Contacts',
+      address: 'Almaty, Kabdolov St. 22B',
+      rights: '© qMed AI 2026 · qBots LLP',
+      documents: 'Documents',
+      privacyPolicy: 'Privacy Policy',
+      publicOffer: 'Public Offer',
+    },
+    modal: {
+      title: 'Contact Us',
+      description: 'Leave your contact details — we will help find the right format for a patient, clinic, monitoring program, or pilot project.',
+      clinicRole: 'Clinic',
+      patientRole: 'Patient',
+      namePlaceholder: 'Organization / Full Name',
+      phonePlaceholder: 'Phone number',
+      contextPlaceholder: 'Briefly: who you are and what you would like to discuss',
+      consentText: 'By clicking the button, I consent to the collection and processing of personal data',
+      submitBtn: 'Send request',
+      submitting: 'Sending...',
+      successTitle: 'Request received!',
+      successSubtitle: 'Thank you for reaching out. Our manager will contact you shortly.',
+      detailsTitle: 'Request details:',
+      organizationLabel: 'Organization',
+      roleLabel: 'Role',
+      phoneLabel: 'Phone',
+      contextLabel: 'Inquiry',
+      closeBtn: 'Got it, close',
+      error: 'Failed to send request. Please try again.',
     },
   },
 }

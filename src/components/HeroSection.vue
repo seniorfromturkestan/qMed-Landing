@@ -140,7 +140,7 @@ onUnmounted(() => {
       <div ref="heroStatRef" v-reveal="320" class="reveal mt-16 flex items-end justify-between gap-4 sm:justify-start md:items-center md:flex-wrap">
         <div class="min-w-0 text-4xl md:text-6xl font-bold tracking-tight text-black leading-none flex flex-col items-start gap-2 md:flex-row md:items-baseline md:flex-wrap">
           <span class="tabular-nums inline-block min-w-[105px] md:min-w-[185px]">
-            {{ patientCount.toLocaleString(store.lang === 'KZ' ? 'kk-KZ' : 'ru-RU') }}+
+            {{ patientCount.toLocaleString(store.lang === 'KZ' ? 'kk-KZ' : store.lang === 'EN' ? 'en-US' : 'ru-RU') }}+
           </span>
           <span class="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight leading-tight text-black">{{ store.t.hero.patientsCount }}</span>
         </div>

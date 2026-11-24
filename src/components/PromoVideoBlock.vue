@@ -19,9 +19,10 @@ function closeModal() {
     <!-- Контейнер-карта с видео -->
     <div
       v-reveal
-      class="reveal relative mx-auto h-[400px] md:h-[600px] overflow-hidden"
+      class="reveal relative mx-auto h-[400px] md:h-[600px] overflow-hidden bg-black cursor-pointer group"
+      @click="openModal"
     >
-      <!-- Фоновое изображение-превью из YouTube -->
+      <!-- Фоновое изображение-превью (пока загружается YouTube-фон) -->
       <img
         src="https://img.youtube.com/vi/54FANsK6Lww/maxresdefault.jpg"
         alt="qMed Video Cover"
@@ -29,8 +30,21 @@ function closeModal() {
         loading="lazy"
       />
 
+      <!-- Фоновое YouTube-видео на автоплее без звука -->
+      <div class="absolute inset-0 z-[5] overflow-hidden pointer-events-none">
+        <iframe
+          class="bg-yt-iframe filter brightness-90"
+          src="https://www.youtube.com/embed/54FANsK6Lww?autoplay=1&mute=1&loop=1&playlist=54FANsK6Lww&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1"
+          title="qMed AI Background Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          tabindex="-1"
+          aria-hidden="true"
+        ></iframe>
+      </div>
+
       <!-- Градиентный оверлей -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent z-10" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent z-10 transition-opacity duration-300 group-hover:opacity-90" />
 
       <!-- Контент внизу -->
       <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 z-20">
@@ -41,10 +55,14 @@ function closeModal() {
 
           <!-- Стеклянная премиальная кнопка Play -->
           <button
-            class="shrink-0 relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full group cursor-pointer transition-all duration-300 focus:outline-none"
+            type="button"
+            class="shrink-0 relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full cursor-pointer transition-all duration-300 focus:outline-none"
             :aria-label="store.t.promo.watchButton"
-            @click="openModal"
+            @click.stop="openModal"
           >
+            <!-- Пульсирующее кольцо -->
+            <span class="absolute inset-0 rounded-full bg-white/25 animate-ping opacity-40 duration-1000" />
+
             <!-- Внешнее стеклянное кольцо -->
             <div class="absolute inset-0 bg-white/15 backdrop-blur-md border border-white/25 rounded-full scale-100 group-hover:scale-110 group-hover:bg-white/25 transition-all duration-500 ease-out shadow-[0_0_30px_rgba(255,255,255,0.15)]" />
             
@@ -107,6 +125,19 @@ function closeModal() {
 </template>
 
 <style scoped>
+/* Масштабирование фонового YouTube-плеера по принципу object-cover (16:9) */
+.bg-yt-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  min-height: 100%;
+  min-width: 177.78vh; /* 16:9 */
+  transform: translate(-50%, -50%) scale(1.08);
+  pointer-events: none;
+}
+
 /* Анимация появления модального окна */
 .fade-enter-active,
 .fade-leave-active {

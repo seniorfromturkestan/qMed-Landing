@@ -70,7 +70,7 @@ function requestDemo() {
       <!-- Ссылки на магазины приложений -->
       <div class="mt-10 flex flex-col items-center px-5">
         <p class="text-lg font-semibold text-black">
-          {{ store.lang === 'KZ' ? 'Қосымшаны орнатыңыз' : 'Установите приложение' }}
+          {{ store.lang === 'KZ' ? 'Қосымшаны орнатыңыз' : store.lang === 'EN' ? 'Install the app' : 'Установите приложение' }}
         </p>
         <div class="mt-4 flex max-w-[520px] flex-wrap items-center justify-center gap-3">
           <a

@@ -11,6 +11,25 @@ const footerLinks = computed(() => [
   { label: store.t.header.nav.scenarios, href: '#scenarios' },
   { label: store.t.header.nav.faq, href: '#faq' },
 ])
+
+const legalDocs = {
+  RU: {
+    privacy: '/privacy-policy-ru.pdf',
+    offer: '/public-offer-ru.pdf',
+  },
+  KZ: {
+    privacy: '/privacy-policy-kz.pdf',
+    offer: '/public-offer-kz.pdf',
+  },
+}
+
+const legalLinks = computed(() => {
+  const docs = store.lang === 'KZ' ? legalDocs.KZ : legalDocs.RU
+  return [
+    { label: store.t.footer.privacyPolicy, href: docs.privacy },
+    { label: store.t.footer.publicOffer, href: docs.offer },
+  ]
+})
 </script>
 
 <template>
@@ -40,6 +59,21 @@ const footerLinks = computed(() => [
             class="text-sm text-white/70 hover:text-white transition"
           >
             {{ link.label }}
+          </a>
+        </nav>
+
+        <!-- Документы -->
+        <nav class="flex flex-col gap-3">
+          <span class="text-xs uppercase tracking-wider text-white/40 mb-1">{{ store.t.footer.documents }}</span>
+          <a
+            v-for="doc in legalLinks"
+            :key="doc.href"
+            :href="doc.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-white/70 hover:text-white transition"
+          >
+            {{ doc.label }}
           </a>
         </nav>
 

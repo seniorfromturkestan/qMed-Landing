@@ -105,7 +105,7 @@ function closeVideoModal() {
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>{{ store.lang === 'KZ' ? 'Үлкейту' : 'Увеличить' }}</span>
+                <span>{{ store.lang === 'KZ' ? 'Үлкейту' : store.lang === 'EN' ? 'Expand' : 'Увеличить' }}</span>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ function closeVideoModal() {
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>{{ store.lang === 'KZ' ? 'Үлкейту' : 'Увеличить' }}</span>
+                <span>{{ store.lang === 'KZ' ? 'Үлкейту' : store.lang === 'EN' ? 'Expand' : 'Увеличить' }}</span>
               </div>
             </div>
           </div>
@@ -204,7 +204,7 @@ function closeVideoModal() {
             aria-label="Закрыть"
             @click="closeVideoModal"
           >
-            <span>{{ store.lang === 'KZ' ? 'Жабу' : 'Закрыть' }}</span>
+            <span>{{ store.lang === 'KZ' ? 'Жабу' : store.lang === 'EN' ? 'Close' : 'Закрыть' }}</span>
             <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />

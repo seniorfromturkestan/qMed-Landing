@@ -1,8 +1,38 @@
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useAppStore } from '../stores/appStore'
+import type { Language } from '../locales/translations'
 import logoImg from '../assets/Logo.png'
 
 const store = useAppStore()
+
+const isLangOpen = ref(false)
+const langDropdownRef = ref<HTMLElement | null>(null)
+
+const languages: { code: Language; label: string }[] = [
+  { code: 'RU', label: 'Русский' },
+  { code: 'KZ', label: 'Қазақша' },
+  { code: 'EN', label: 'English' },
+]
+
+function selectLang(code: Language) {
+  store.setLang(code)
+  isLangOpen.value = false
+}
+
+function handleClickOutside(event: MouseEvent) {
+  if (langDropdownRef.value && !langDropdownRef.value.contains(event.target as Node)) {
+    isLangOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 
 // Ссылки соцсетей
 const socials = [
@@ -80,12 +110,55 @@ const socials = [
           <svg class="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="currentColor"><path :d="social.icon" /></svg>
         </a>
 
-        <button
-          class="text-sm font-medium border border-black/20 rounded-sm px-[12px] py-[5px] hover:border-black transition"
-          @click="store.toggleLang"
-        >
-          {{ store.lang }}
-        </button>
+        <div ref="langDropdownRef" class="relative">
+          <button
+            type="button"
+            class="flex items-center gap-1.5 text-sm font-medium border border-black/20 rounded-sm px-[12px] py-[5px] hover:border-black transition cursor-pointer"
+            :aria-expanded="isLangOpen"
+            aria-haspopup="listbox"
+            @click="isLangOpen = !isLangOpen"
+          >
+            <span>{{ store.lang }}</span>
+            <svg
+              class="w-3.5 h-3.5 text-black/60 transition-transform duration-200"
+              :class="isLangOpen ? 'rotate-180' : ''"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <Transition name="dropdown">
+            <div
+              v-if="isLangOpen"
+              role="listbox"
+              class="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-[0_10px_30px_rgba(0,0,0,0.1)] py-1 z-50 overflow-hidden"
+            >
+              <button
+                v-for="item in languages"
+                :key="item.code"
+                type="button"
+                role="option"
+                :aria-selected="store.lang === item.code"
+                class="w-full px-3.5 py-2 text-left text-sm flex items-center justify-between transition cursor-pointer"
+                :class="
+                  store.lang === item.code
+                    ? 'bg-primary/10 text-primary font-semibold'
+                    : 'text-black/80 hover:bg-gray-100'
+                "
+                @click="selectLang(item.code)"
+              >
+                <span>{{ item.label }}</span>
+                <span class="text-xs opacity-60">{{ item.code }}</span>
+              </button>
+            </div>
+          </Transition>
+        </div>
       </div>
     </div>
     <!-- Мобильная навигация вынесена в отдельный компонент MobileDrawer.vue -->
@@ -98,5 +171,15 @@ const socials = [
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
 }
 </style>

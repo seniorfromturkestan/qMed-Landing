@@ -66,7 +66,9 @@ async function submit() {
   if (!form.consent) {
     submitError.value = store.lang === 'KZ'
       ? 'Деректерді өңдеуге келісім беру қажет'
-      : 'Необходимо дать согласие на обработку персональных данных'
+      : store.lang === 'EN'
+        ? 'You must consent to personal data processing'
+        : 'Необходимо дать согласие на обработку персональных данных'
     return
   }
 
@@ -74,7 +76,9 @@ async function submit() {
   if (digitsOnly.length !== 11) {
     submitError.value = store.lang === 'KZ'
       ? 'Телефон нөмірін толық енгізіңіз (11 сан)'
-      : 'Введите полный номер телефона (11 цифр)'
+      : store.lang === 'EN'
+        ? 'Please enter a full phone number (11 digits)'
+        : 'Введите полный номер телефона (11 цифр)'
     return
   }
 
@@ -196,7 +200,7 @@ function handleClose() {
                 :key="role"
                 type="button"
                 class="flex-1 rounded-[10px] py-[10px] text-sm font-medium border transition cursor-pointer"
-                :class="form.role === role || (form.role === 'Клиника' && role === tModal.clinicRole)
+                :class="form.role === role || ((form.role === 'Клиника' || form.role === 'Clinic') && role === tModal.clinicRole)
                   ? 'bg-primary text-white border-primary'
                   : 'bg-white/60 text-black/70 border-gray-300/70 hover:border-primary'"
                 @click="form.role = role"

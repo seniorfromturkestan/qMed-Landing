@@ -33,8 +33,14 @@ export const useAppStore = defineStore('app', {
       this.isDemoModalOpen = !this.isDemoModalOpen
     },
 
+    setLang(newLang: Language) {
+      this.lang = newLang
+    },
+
     toggleLang() {
-      this.lang = this.lang === 'RU' ? 'KZ' : 'RU'
+      const order: Language[] = ['RU', 'KZ', 'EN']
+      const nextIndex = (order.indexOf(this.lang) + 1) % order.length
+      this.lang = order[nextIndex]
     },
   },
 })
