@@ -22,6 +22,7 @@ export interface TranslationSchema {
       presidential: string
       healthMinistry: string
       cardioAssoc: string
+      rphc: string
       asfendiyarov: string
     }
   }
@@ -127,6 +128,7 @@ export const translations: Record<Language, TranslationSchema> = {
         presidential: 'Президентский грант',
         healthMinistry: 'Министерство здравоохранения РК',
         cardioAssoc: 'Ассоциация кардиологов РК',
+        rphc: 'Республиканский центр ПМСП',
         asfendiyarov: 'КазНМУ им. Асфендиярова',
       },
     },
@@ -261,6 +263,7 @@ export const translations: Record<Language, TranslationSchema> = {
         presidential: 'Президенттік грант',
         healthMinistry: 'ҚР Денсаулық сақтау министрлігі',
         cardioAssoc: 'ҚР Кардиологтар қауымдастығы',
+        rphc: 'Республикалық МСАК орталығы',
         asfendiyarov: 'С.Д. Асфендияров атындағы ҚазҰМУ',
       },
     },
@@ -395,6 +398,7 @@ export const translations: Record<Language, TranslationSchema> = {
         presidential: 'Presidential Grant',
         healthMinistry: 'Ministry of Healthcare of the RK',
         cardioAssoc: 'Association of Cardiologists of the RK',
+        rphc: 'Republican PHC Centre',
         asfendiyarov: 'Asfendiyarov KazNMU',
       },
     },

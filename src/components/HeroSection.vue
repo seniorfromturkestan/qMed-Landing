@@ -166,13 +166,7 @@ onUnmounted(() => {
             :aria-hidden="copy === 2 ? 'true' : undefined"
           >
 
-            <!-- Президентский грант -->
-            <div class="flex items-center gap-1.5 shrink-0">
-              <img src="../assets/image.png" alt="Президентский грант" class="h-10 md:h-12 w-auto object-contain" />
-              <span class="text-xs md:text-sm font-medium text-black/70 max-w-[120px] leading-tight shrink-0">{{ store.t.hero.grants.presidential }}</span>
-            </div>
-
-            <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
+            
 
         <!-- Министерство здравоохранения -->
             <div class="flex items-center gap-1.5 shrink-0">
@@ -184,8 +178,16 @@ onUnmounted(() => {
 
         <!-- Ассоциация кардиологов -->
             <div class="flex items-center gap-1.5 shrink-0">
-              <img src="https://cardio-assoc.kz/favicons/android-icon-192x192.png" alt="Ассоциация кардиологов РК" class="h-10 md:h-12 w-auto object-contain" />
+              <img src="../assets/cardio-ass.png" alt="Ассоциация кардиологов РК" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[130px] md:min-w-[150px] max-w-[160px] leading-tight shrink-0">{{ store.t.hero.grants.cardioAssoc }}</span>
+            </div>
+
+            <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
+
+        <!-- Республиканский центр ПМСП -->
+            <div class="flex items-center gap-1.5 shrink-0">
+              <img src="../assets/rphc.png" alt="Республиканский центр ПМСП" class="h-10 md:h-12 w-auto object-contain" />
+              <span class="text-xs md:text-sm font-medium text-black/70 min-w-[130px] md:min-w-[150px] max-w-[160px] leading-tight shrink-0">{{ store.t.hero.grants.rphc }}</span>
             </div>
 
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
