@@ -177,7 +177,7 @@ onUnmounted(() => {
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
 
         <!-- Ассоциация кардиологов -->
-            <a href="https://kzcardio.kz" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
+            <a href="https://cardio-assoc.kz/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
               <img src="../assets/cardio-ass.png" alt="Ассоциация кардиологов РК" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[130px] md:min-w-[150px] max-w-[160px] leading-tight shrink-0">{{ store.t.hero.grants.cardioAssoc }}</span>
             </a>
@@ -185,7 +185,7 @@ onUnmounted(() => {
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
 
         <!-- Республиканский центр ПМСП -->
-            <a href="https://rphc.kz" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
+            <a href="https://pmsp-almaly.kz/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
               <img src="../assets/rphc.png" alt="Республиканский центр ПМСП" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[130px] md:min-w-[150px] max-w-[160px] leading-tight shrink-0">{{ store.t.hero.grants.rphc }}</span>
             </a>
