@@ -169,39 +169,41 @@ onUnmounted(() => {
             
 
         <!-- Министерство здравоохранения -->
-            <div class="flex items-center gap-1.5 shrink-0">
+            <a href="https://www.gov.kz/memleket/entities/dsm" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
               <img src="https://www.gov.kz/uploads/2019/1/21/3c771133a679a2ed344769517f3667a9_original.62095.png" alt="Министерство здравоохранения РК" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[150px] md:min-w-[175px] max-w-[190px] leading-tight shrink-0">{{ store.t.hero.grants.healthMinistry }}</span>
-            </div>
+            </a>
 
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
 
         <!-- Ассоциация кардиологов -->
-            <div class="flex items-center gap-1.5 shrink-0">
+            <a href="https://kzcardio.kz" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
               <img src="../assets/cardio-ass.png" alt="Ассоциация кардиологов РК" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[130px] md:min-w-[150px] max-w-[160px] leading-tight shrink-0">{{ store.t.hero.grants.cardioAssoc }}</span>
-            </div>
+            </a>
 
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
 
         <!-- Республиканский центр ПМСП -->
-            <div class="flex items-center gap-1.5 shrink-0">
+            <a href="https://rphc.kz" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
               <img src="../assets/rphc.png" alt="Республиканский центр ПМСП" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[130px] md:min-w-[150px] max-w-[160px] leading-tight shrink-0">{{ store.t.hero.grants.rphc }}</span>
-            </div>
+            </a>
 
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
 
         <!-- Мединститут Асфендиярова -->
-            <div class="flex items-center gap-1.5 shrink-0">
+            <a href="https://kaznmu.edu.kz" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 shrink-0 transition-opacity hover:opacity-70">
               <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%9A%D0%B0%D0%B7%D0%9D%D0%9C%D0%A3.png" alt="КазНМУ им. Асфендиярова" class="h-10 md:h-12 w-auto object-contain" />
               <span class="text-xs md:text-sm font-medium text-black/70 min-w-[120px] md:min-w-[140px] max-w-[150px] leading-tight shrink-0">{{ store.t.hero.grants.asfendiyarov }}</span>
-            </div>
+            </a>
 
             <div class="hidden md:block w-px h-8 bg-black/10 shrink-0" />
 
         <!-- Astana Hub -->
-            <img src="https://framerusercontent.com/images/tXX47nIDpfWdyumwRLTnBucnlw.png?scale-down-to=512" alt="Astana Hub" class="h-16 md:h-20 lg:h-20 w-auto object-contain shrink-0" />
+            <a href="https://astanahub.com" target="_blank" rel="noopener noreferrer" class="shrink-0 transition-opacity hover:opacity-70">
+              <img src="https://framerusercontent.com/images/tXX47nIDpfWdyumwRLTnBucnlw.png?scale-down-to=512" alt="Astana Hub" class="h-16 md:h-20 lg:h-20 w-auto object-contain" />
+            </a>
 
           </div>
         </div>
